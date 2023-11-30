@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en"> <!--- Странно, язык указан en а таблица на русском--->
+<head>
+    <meta charset="UTF-8">
+    <title>Форма выбора питомца</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<main>
+    <h1>Найди себе друга!</h1>
+
+    <form action="/pets/orders" method="post">
+        <div class="petType">
+            <p class="label">Тип питомца:
+                <select name="petType">
+                    <option value="cat">Кошка</option>
+                    <option value="dog">Собака</option>
+                    <option value="tiger">Тигр</option>
+                </select>
+            </p>
+        </div>
+
+        <div class="gender">
+            <p class="label">Пол питомца:
+                <select name="gender">
+                    <option value="boy" selected>Мальчик</option>
+                    <option value="girl">Девочка</option>
+                </select>
+            </p>
+        </div>
+
+        <div class="eye_color">
+            <p class="label">Цвет глаз:
+                <input type="color" name="eyeColor" value="#3464f4">
+        </div>
+
+        <div class="tail_length">
+            <p class="label">Введите длину хвоста в см:
+            <input type="range" name="tailLength"
+                   value="25" min="0" max="50" oninput="this.nextElementSibling.value = this.value">
+            <output>25</output>
+            </p>
+        </div>
+
+        <div class="name">
+            <p class="label">Имя хозяина:
+                <input name="name" placeholder="Имя хозяина" required>
+            </p>
+        </div>
+
+        <div class="date_of_birth">
+            <p class="label">Дата рождения:
+                <input type="date" name="dateOfBirth" required>
+            </p>
+        </div>
+
+        <div class="email">
+            <p class="label">Email@:
+                <input type="email" name="email" placeholder="example@example.ru" required>
+            </p>
+        </div>
+
+        <div class="phone">
+            <p class="label">Телефон:
+                <input type="tel" name="phone" placeholder="+7XXXXXXXXXX" required>
+            </p>
+        </div>
+
+        <div class="rules">
+            <p class="label">
+                <input type="checkbox" name="rules" value="true" required>
+                Согласны с правилами размещения
+            </p>
+        </div>
+
+        <p>
+            <button type="submit" id="submit_button">Отправить</button>
+            <button type="reset" id="reset_button">Сбросить</button>
+        </p>
+
+    </form>
+
+    <!---
+
+       phone
+       rules
+   --->
+
+</main>
+</body>
+</html>
